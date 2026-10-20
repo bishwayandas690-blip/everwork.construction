@@ -1,0 +1,230 @@
+/* ── Google Fonts ────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@import "tailwindcss";
+
+/* ── CSS Custom Properties ───────────────────────────────── */
+:root {
+  --white: #FFFFFF;
+  --off-white: #F8F6F3;
+  --light-grey: #F0EDE8;
+  --border-grey: #E8E4DF;
+  --charcoal: #1C1C1E;
+  --dark: #111111;
+  --muted: #6B6462;
+  --bronze: #A87C4F;
+  --bronze-light: #C49A6C;
+  --bronze-pale: #F5EDE2;
+
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.45);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --nav-height: 72px;
+}
+
+/* ── Reset & Base ────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--white);
+  color: var(--charcoal);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ── Typography ──────────────────────────────────────────── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tech {
+  font-family: var(--font-mono);
+}
+
+/* ── Glass Utilities ─────────────────────────────────────── */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-dark {
+  background: rgba(17, 17, 17, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-bronze {
+  background: rgba(168, 124, 79, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(168, 124, 79, 0.2);
+}
+
+/* ── Section Spacing ─────────────────────────────────────── */
+.section-padding {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ── Scrollbar ───────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bronze);
+  border-radius: 3px;
+}
+
+/* ── Focus States ────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--bronze);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* ── Selection ───────────────────────────────────────────── */
+::selection {
+  background: var(--bronze-pale);
+  color: var(--charcoal);
+}
+
+/* ── Reduced Motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ── Custom Animations ───────────────────────────────────── */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ── Divider ─────────────────────────────────────────────── */
+.bronze-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--bronze), var(--bronze-light));
+  border-radius: 1px;
+}
+
+/* ── Video Hero ──────────────────────────────────────────── */
+.hero-video-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.45) 0%,
+    rgba(10, 10, 10, 0.30) 50%,
+    rgba(10, 10, 10, 0.55) 100%
+  );
+}
+
+/* ── Form Inputs ─────────────────────────────────────────── */
+.form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid var(--border-grey);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  color: var(--charcoal);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: var(--bronze);
+  box-shadow: 0 0 0 3px rgba(168, 124, 79, 0.12);
+}
+
+.form-input::placeholder {
+  color: #9E9896;
+}
+
+/* ── Step Number ─────────────────────────────────────────── */
+.step-number {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  font-weight: 400;
+  color: rgba(168, 124, 79, 0.12);
+  line-height: 1;
+  letter-spacing: -2px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* ── Gradient Text ───────────────────────────────────────── */
+.text-bronze-gradient {
+  background: linear-gradient(135deg, var(--bronze) 0%, var(--bronze-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── WhatsApp Float ──────────────────────────────────────── */
+.float-actions {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── Project Placeholder ─────────────────────────────────── */
+.project-placeholder {
+  background: linear-gradient(135deg, var(--light-grey) 0%, var(--border-grey) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
