@@ -56,7 +56,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <div className="mb-5">
               <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="Everwork Construction Logo"
                 width={120}
                 height={120}

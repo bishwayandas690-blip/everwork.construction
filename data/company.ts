@@ -45,7 +45,7 @@ export const company = {
   // ── Media ────────────────────────────────────────────────
   heroVideoPath: "/hero-video.mp4",
   heroPosterPath: "/hero-poster.jpg", // Add a poster image for video fallback
-  logoPath: "/logo.png",
+  logoPath: "/logo.jpeg",
 
   // ── Services ─────────────────────────────────────────────
   services: [

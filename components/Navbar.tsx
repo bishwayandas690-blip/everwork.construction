@@ -66,7 +66,7 @@ export default function Navbar({ onQuoteClick }: { onQuoteClick: () => void }) {
               style={{ aspectRatio: "auto" }}
             >
               <Image
-                src="/logo.png"
+                src="/logo.jpeg"
                 alt="Everwork Construction Logo"
                 height={scrolled ? 48 : 56}
                 width={scrolled ? 48 : 56}
