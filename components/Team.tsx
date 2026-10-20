@@ -17,7 +17,8 @@ function TeamPhoto({ src, name }: { src: string; name: string }) {
         src={src}
         alt={`Photo of ${name}`}
         fill
-        className="object-cover object-top"
+        className="object-cover"
+        style={{ objectPosition: "center 15%" }}
         onError={() => setFailed(true)}
         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
       />
